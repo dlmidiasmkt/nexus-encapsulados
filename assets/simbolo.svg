@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Nexus">
+  <defs>
+    <linearGradient id="ouro" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F3D27A"/>
+      <stop offset=".55" stop-color="#C99A3B"/>
+      <stop offset="1" stop-color="#9C7128"/>
+    </linearGradient>
+    <mask id="corte">
+      <rect width="120" height="120" fill="#fff"/>
+      <path d="M45 47 L69 85" stroke="#000" stroke-width="2.2" stroke-linecap="square"/>
+    </mask>
+  </defs>
+  <g fill="none" stroke="url(#ouro)" stroke-width="3.6" stroke-linecap="round">
+    <path d="M55.6 10.2 A50 50 0 0 1 95.4 95.4"/>
+    <path d="M55.6 109.8 A50 50 0 0 1 42.9 13"/>
+  </g>
+  <g fill="url(#ouro)">
+    <circle cx="98.3" cy="27.9" r="4.6"/>
+    <circle cx="13" cy="77.1" r="4.6"/>
+    <g mask="url(#corte)">
+      <path d="M33 29 L46 21 L46 87 L33 81 Z"/>
+      <path d="M33 21 L48 21 L99 101 L84 101 Z"/>
+      <path d="M73 30 L87 24 L87 84 L73 62 Z"/>
+    </g>
+  </g>
+</svg>

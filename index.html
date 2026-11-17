@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nexus | Mentoria e sistema para vender encapsulados</title>
+<meta name="description" content="Mentoria e sistema Nexus: funil no WhatsApp, pedido, entrega com pagamento na entrega e recompra, tudo num painel. Entre na lista.">
+<meta name="theme-color" content="#010e21">
+<meta property="og:title" content="Nexus | Chat vira pedido, pedido vira entrega">
+<meta property="og:description" content="Mentoria e sistema para vender encapsulados pelo WhatsApp, com pagamento na entrega.">
+<meta property="og:image" content="assets/crm-dashboard.png">
+<link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Michroma&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js'</script>
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+
+<header class="nav">
+  <a class="mark" href="#topo" aria-label="Nexus, início"><img src="assets/simbolo.svg" alt="" width="34" height="34"><span>NEXUS</span></a>
+  <ul>
+    <li><a href="#como">Como funciona</a></li>
+    <li><a href="#sistema">O sistema</a></li>
+    <li><a href="#conta">Faça a conta</a></li>
+    <li><a href="#perguntas">Perguntas</a></li>
+  </ul>
+  <a class="btn" href="#entrar">Entrar na lista</a>
+</header>
+
+<main id="topo">
+
+<!-- 1. HERÓI -->
+<section class="hero" aria-labelledby="h1">
+  <h1 id="h1" class="mk" aria-label="Chat vira pedido, pedido vira entrega.">
+    <span class="ln" aria-hidden="true"><span>Chat vira pedido,</span></span>
+    <span class="ln" aria-hidden="true"><span>pedido vira <span class="slot"><img src="assets/orbi.jpg" alt="" width="320" height="320"></span></span></span>
+  </h1>
+  <p class="sub">Mentoria e sistema para vender encapsulados pelo WhatsApp, com pagamento na entrega.</p>
+  <div class="go">
+    <a class="btn" href="#entrar">Entrar na lista</a>
+    <a class="link" href="#como">Ver como funciona</a>
+  </div>
+  <div class="chips">
+    <div class="chip c1" data-ui>
+      <div><b>Etapa do pedido</b><output id="chEtapa" aria-live="polite">Novo contato</output></div>
+      <button type="button" id="chEtapaBt" aria-label="Avançar para a próxima etapa do pedido">→</button>
+    </div>
+    <div class="chip c2" data-ui>
+      <div><b>Pagamento</b><output id="chPag" aria-live="polite">Paga ao receber</output></div>
+      <button type="button" class="sw" id="chPagBt" aria-pressed="true" aria-label="Pagamento na entrega"></button>
+    </div>
+    <div class="chip c3" data-ui>
+      <div><b>Aviso de recompra</b><output id="chRec" aria-live="polite">em 30 dias</output></div>
+      <button type="button" id="chRecBt" aria-label="Trocar o prazo do aviso de recompra">+</button>
+    </div>
+  </div>
+</section>
+
+<!-- 2. FRASE -->
+<section class="intro paper" aria-label="Resumo">
+  <p class="rv">Você conversa, <span class="th"><img src="assets/vega.jpg" alt="" width="320" height="320" loading="lazy"></span>o robô atende, o pedido sai e o <span class="th"><img src="assets/orbi.jpg" alt="" width="320" height="320" loading="lazy"></span>entregador <span class="th"><img src="assets/dara.jpg" alt="" width="320" height="320" loading="lazy"></span><em>cobra na porta</em>, tudo no mesmo painel.</p>
+</section>
+
+<!-- 3. COMO FUNCIONA -->
+<section class="how" id="como" aria-labelledby="hw">
+  <div class="l">
+    <h2 id="hw"><span id="hwTxt">O robô atende e guarda as respostas.</span></h2>
+  </div>
+  <div class="r">
+    <div class="frag on" data-ui data-e="0">
+      <h3><img src="assets/vega.jpg" alt="" width="40" height="40">Atendimento automático</h3>
+      <div class="bub c">Oi, vi o anúncio.</div>
+      <div class="bub b">Oi! Posso te mostrar como funciona? É rapidinho.</div>
+      <div class="bub c">Pode.</div>
+      <div class="bub b">Antes, me conta: qual é o seu nome?</div>
+      <p class="ex">Conversa de exemplo.</p>
+    </div>
+    <div class="frag" data-ui data-e="1">
+      <h3><img src="assets/nex.jpg" alt="" width="40" height="40">Pedido criado</h3>
+      <div class="kv"><span>Pacote escolhido</span><b>Opção 2</b></div>
+      <div class="kv"><span>CEP</span><b>00000-000</b></div>
+      <div class="kv"><span>Pagamento</span><b>Na entrega</b></div>
+      <div class="kv"><span>Etapa</span><span class="tag">Endereço confirmado</span></div>
+      <p class="ex">Pedido de exemplo.</p>
+    </div>
+    <div class="frag" data-ui data-e="2">
+      <h3><img src="assets/orbi.jpg" alt="" width="40" height="40">Entrega em rota</h3>
+      <div class="kv"><span>Cliente</span><b>Maria (exemplo)</b></div>
+      <div class="kv"><span>Receber na porta</span><b>R$ 0,00</b></div>
+      <div class="kv"><span>Etapa</span><span class="tag">Enviado</span></div>
+      <div class="kv"><span>Ao entregar</span><b>Marca “Entregue e pago”</b></div>
+      <p class="ex">Entrega de exemplo.</p>
+    </div>
+    <div class="frag" data-ui data-e="3">
+      <h3><img src="assets/tico.jpg" alt="" width="40" height="40">Aviso de recompra</h3>
+      <div class="bub b">Oi, tudo bem? Como foi com o seu pedido? Se quiser repor, é só me chamar.</div>
+      <div class="kv"><span>Enviado depois de</span><b>30 dias</b></div>
+      <div class="kv"><span>Se o cliente responder</span><b>Volta ao funil</b></div>
+      <p class="ex">Mensagem de exemplo.</p>
+    </div>
+  </div>
+  <div class="rng">
+    <i class="fill" aria-hidden="true"></i>
+    <input type="range" id="hwRng" min="0" max="3" step="1" value="0" aria-label="Etapa do funil" aria-valuetext="Conversa">
+    <ol id="hwNames">
+      <li><button type="button" data-i="0" aria-current="true">Conversa</button></li>
+      <li><button type="button" data-i="1">Pedido</button></li>
+      <li><button type="button" data-i="2">Entrega</button></li>
+      <li><button type="button" data-i="3">Recompra</button></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 4. O SISTEMA: UMA MOLDURA, TRÊS DISTÂNCIAS -->
+<section class="show" id="sistema" data-st="1" aria-labelledby="sh">
+  <div class="stage">
+    <h2 id="sh"><span class="a">Tudo no</span><span class="sr"> mesmo painel.</span></h2>
+    <div class="frame" id="frm"><img src="assets/crm-dashboard.png" alt="Painel de vendas do Nexus CRM Pro: indicadores de leads, faturamento, vendas e ticket médio, com gráficos por dia e por horário." width="2880" height="1800" loading="lazy"></div>
+    <div class="b" aria-hidden="true">mesmo painel.</div>
+    <p class="cap">Faturamento, ticket médio e lucro calculados a partir dos pedidos. Tela da versão de teste do Nexus CRM Pro, com dados de exemplo.</p>
+    <p class="hint">Role para chegar mais perto.</p>
+  </div>
+</section>
+
+<!-- 5. O QUE VOCÊ LEVA -->
+<section aria-label="O que a mentoria entrega">
+  <div class="field f1">
+    <div class="pic rv d1"><img src="assets/nex.jpg" alt="Mascote Nex, de fone de ouvido, com o polegar para cima" width="320" height="320" loading="lazy"></div>
+    <p class="rv">Um modelo de funil só, sempre atualizado. Quando a Nexus melhora o modelo, o seu recebe a melhoria sem apagar seu preço, seu produto nem suas mídias.</p>
+    <h2 class="rv">Funil pronto.</h2>
+  </div>
+  <div class="field f2 cobalt">
+    <div class="pic rv d1"><img src="assets/orbi.jpg" alt="Mascote Orbi, de boné azul, segurando uma caixa de entrega" width="320" height="320" loading="lazy"></div>
+    <p class="rv">O cliente confirma no WhatsApp e paga quando recebe. Cada pedido vira um cartão que anda de “endereço confirmado” até “entregue e pago”.</p>
+    <h2 class="rv">Pago na porta.</h2>
+  </div>
+  <div class="field f3 paper">
+    <div class="pic rv d1"><img src="assets/lumi.jpg" alt="Mascote Lumi, de fone de ouvido, fazendo um coração com as mãos" width="320" height="320" loading="lazy"></div>
+    <p class="rv">Uma conta para cada mentorado, com login próprio. A conversa dos seus clientes só abre para o suporte com o seu aceite.</p>
+    <h2 class="rv">Você no controle.</h2>
+  </div>
+</section>
+
+<!-- 6. FAÇA A CONTA (a coisa viva) -->
+<section class="calc" id="conta" aria-labelledby="cc">
+  <div>
+    <h2 id="cc" class="rv">Faça a conta do seu mês.</h2>
+    <p class="lead rv d1">Mexa nos números e veja o que sobra no fim de 30 dias. Os valores já preenchidos são só de exemplo: troque pelos seus.</p>
+  </div>
+  <div>
+    <form id="calc" class="rv d1" onsubmit="return false" aria-describedby="calcNote">
+      <div class="fld"><label for="iP">Pedidos novos por dia <output id="oP"></output></label><input type="range" id="iP" min="1" max="40" step="1" value="6"></div>
+      <div class="fld"><label for="iT">Valor médio do pedido <output id="oT"></output></label><input type="range" id="iT" min="100" max="1000" step="10" value="300"></div>
+      <div class="fld"><label for="iE">Pedidos que chegam a ser entregues e pagos <output id="oE"></output></label><input type="range" id="iE" min="40" max="95" step="1" value="70"></div>
+      <div class="fld"><label for="iC">Custo do produto, por pedido entregue <output id="oC"></output></label><input type="range" id="iC" min="10" max="400" step="5" value="90"></div>
+      <div class="fld"><label for="iA">Anúncio, por pedido feito <output id="oA"></output></label><input type="range" id="iA" min="10" max="300" step="5" value="60"></div>
+      <div class="fld"><label for="iF">Frete, por pedido enviado <output id="oF"></output></label><input type="range" id="iF" min="0" max="80" step="1" value="25"></div>
+    </form>
+    <div class="res rv d2" aria-live="polite">
+      <p class="big" id="rRes"></p>
+      <div class="row"><span>Pedidos entregues e pagos no mês</span><b id="rEnt"></b></div>
+      <div class="row"><span>Entrou no caixa</span><b id="rFat"></b></div>
+      <div class="row"><span>Saiu: produto, anúncio e frete</span><b id="rCus"></b></div>
+      <div class="row"><span>Anúncio máximo por pedido para não ter prejuízo</span><b id="rCpa"></b></div>
+      <p class="note" id="calcNote">Simulação com números de exemplo. Não é promessa de ganho: o seu resultado depende do produto, do preço, da entrega e do anúncio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ETAPAS DO FUNIL -->
+<section class="list" aria-labelledby="lt">
+  <h2 id="lt" class="rv">O funil, etapa por etapa.</h2>
+  <div class="tb">
+    <p class="nm" aria-hidden="true">Etapas</p>
+    <table class="rv">
+      <caption class="sr">Etapas do funil-modelo e quem faz cada uma</caption>
+      <tbody>
+        <tr><td>Boas-vindas</td><td>Áudio e vídeo de apresentação</td><td>Robô</td></tr>
+        <tr><td>Perguntas</td><td>Guarda as respostas do cliente</td><td>Robô</td></tr>
+        <tr><td>Oferta</td><td>Tabela de pacotes numerada</td><td>Robô</td></tr>
+        <tr><td>Escolha</td><td>Cliente responde 1, 2 ou 3</td><td>Cliente</td></tr>
+        <tr class="g"><td>Endereço</td><td>Busca pelo CEP e confirma</td><td>Robô</td></tr>
+        <tr><td>Pedido</td><td>Cartão novo no quadro de entregas</td><td>Robô</td></tr>
+        <tr><td>Entrega</td><td>Leva o pedido e cobra na porta</td><td>Entregador</td></tr>
+        <tr><td>Recompra</td><td>Aviso no prazo que você definir</td><td>Robô</td></tr>
+      </tbody>
+    </table>
+    <div class="who rv d1"><img src="assets/atlas.jpg" alt="Mascote Atlas, de óculos dourados, com um tablet" width="320" height="320" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- 8. PERGUNTAS -->
+<section class="faq" id="perguntas" aria-labelledby="fq">
+  <h2 id="fq" class="rv">Perguntas que valem a pena.</h2>
+  <div class="qs rv">
+    <details><summary>O que é pagamento na entrega?</summary><p>O cliente confirma o pedido no WhatsApp e só paga quando recebe. Tira o medo de comprar, mas exige entrega organizada e um funil que confirme bem o endereço.</p></details>
+    <details><summary>O sistema já está pronto?</summary><p>Ainda não por inteiro. A versão de teste do Nexus CRM Pro já roda no navegador com dados de exemplo: WhatsApp de teste, conversas, quadro de pedidos e painel. As conexões reais e as contas dos mentorados estão em construção.</p></details>
+    <details><summary>Posso prometer resultado de saúde?</summary><p>Não. Fale só do que a embalagem e a regularização do produto permitem, e siga as regras da Anvisa e das plataformas de anúncio. O que você diz ao cliente é responsabilidade sua.</p></details>
+    <details><summary>Preciso de um número de WhatsApp separado?</summary><p>É o mais seguro. Responder só quem chamou tem risco baixo de bloqueio. Disparo para quem nunca falou com você tem risco alto e não faz parte do método.</p></details>
+    <details><summary>Como ficam os dados dos meus clientes?</summary><p>Cada mentorado tem a própria conta. A equipe da Nexus não lê as conversas dos seus clientes sem o seu aceite, e os dados seguem a LGPD.</p></details>
+    <details><summary>Quanto custa para entrar?</summary><p>O valor é combinado na conversa com a Nexus, depois que você entra na lista. Não existe preço fixo publicado aqui.</p></details>
+  </div>
+</section>
+
+<!-- 9. CANDIDATURA -->
+<section class="apply cobalt" id="entrar" aria-labelledby="ap">
+  <form id="form" novalidate>
+    <h2 id="ap" class="rv">Meu nome é <input class="gap" id="fNome" name="nome" type="text" autocomplete="name" placeholder="seu nome" aria-label="Seu nome" required> e quero <button class="go" type="submit">entrar</button></h2>
+    <div class="more rv d1">
+      <input type="tel" id="fTel" name="tel" autocomplete="tel" placeholder="Seu WhatsApp" aria-label="Seu WhatsApp" inputmode="tel">
+      <input type="text" id="fCid" name="cidade" autocomplete="address-level2" placeholder="Sua cidade" aria-label="Sua cidade">
+      <label class="chk"><input type="checkbox" id="fOk" required><span>Aceito usar meus dados só para a Nexus falar comigo sobre a mentoria.</span></label>
+    </div>
+    <p class="after rv d2">Ao enviar, abre o seu WhatsApp com a mensagem pronta para a Nexus. Seus dados não ficam guardados neste site.</p>
+    <p class="msg" id="fMsg" role="status"></p>
+  </form>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="top">
+    <div style="grid-column:1/8">
+      <h2>Vamos conversar?</h2>
+      <a class="btn" href="#entrar">Entrar na lista</a>
+    </div>
+    <div class="pic"><img src="assets/iris.jpg" alt="Mascote Iris, acenando" width="320" height="320" loading="lazy"></div>
+    <nav class="lk" aria-label="Rodapé">
+      <a href="#como">Como funciona</a>
+      <a href="#sistema">O sistema</a>
+      <a href="#perguntas">Perguntas</a>
+      <a href="privacidade.html">Privacidade</a>
+    </nav>
+  </div>
+  <div class="legal"><span>© 2026 Nexus Company. Telas do sistema: versão de teste com dados de exemplo.</span><a href="privacidade.html">Privacidade e LGPD</a></div>
+  <div class="name" aria-hidden="true">NEXUS</div>
+</footer>
+
+<script src="config.js?v=1"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>
