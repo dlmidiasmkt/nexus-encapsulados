@@ -4,7 +4,7 @@ cd /d "%~dp0"
 if not exist ".git" (
   git init -q -b main
   git remote add origin https://github.com/dlmidiasmkt/nexus-encapsulados.git
-  echo Primeiro envio: crie antes o repositorio publico dlmidiasmkt/nexus-encapsulados no GitHub e ligue o Pages em Settings > Pages ^(branch main^).
+  echo Primeiro envio: crie antes o repositorio publico dlmidiasmkt/nexus-encapsulados no GitHub e ligue o Pages nas configuracoes do repositorio ^(branch main^).
 )
 git add -A
 git -c user.name=Nexus -c user.email=nexus@users.noreply.github.com commit -q -m "Site Nexus: mentoria de encapsulados"
